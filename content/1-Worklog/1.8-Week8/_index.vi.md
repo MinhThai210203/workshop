@@ -1,54 +1,59 @@
 ---
-title: "Worklog Tuần 8"
+title: "Nhật ký công việc Tuần 8"
 date: 2024-01-01
-weight: 1
+weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
 ### Mục tiêu tuần 8:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Triển khai AWS Transit Gateway cho multi-VPC connectivity.
+* Tối ưu hóa chi phí EC2 với Lambda automation và resource tagging.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - Nghiên cứu AWS Transit Gateway architecture và use cases<br>- So sánh Transit Gateway vs VPC Peering<br>- Tạo Transit Gateway và configure settings<br>- Attach VPCs vào Transit Gateway | 08/06/2026 | 08/06/2026 | <https://000020.awsstudygroup.com/> |
+| 3 | - Cấu hình Transit Gateway route tables<br>- Test connectivity giữa multiple VPCs<br>- Launch EC2 instances và test inter-VPC communication<br>- Monitor Transit Gateway metrics trên CloudWatch | 09/06/2026 | 09/06/2026 | <https://000020.awsstudygroup.com/> |
+| 4 | - Nghiên cứu EC2 cost optimization strategies<br>- Tìm hiểu về Lambda functions cho automation<br>- Tạo IAM roles cho Lambda execution<br>- Viết Lambda function để stop EC2 instances | 10/06/2026 | 10/06/2026 | <https://000022.awsstudygroup.com/> |
+| 5 | - Viết Lambda function để start EC2 instances<br>- Implement resource tagging strategy<br>- Configure EventBridge rules cho scheduled execution<br>- Test automated start/stop schedule | 11/06/2026 | 11/06/2026 | <https://000022.awsstudygroup.com/> |
+| 6 | - Implement SNS notifications cho Lambda executions<br>- Configure CloudWatch alarms cho cost monitoring<br>- Create CloudWatch dashboard cho cost tracking<br>- Document toàn bộ solution architecture | 12/06/2026 | 12/06/2026 | <https://000022.awsstudygroup.com/> |
 
 ### Kết quả đạt được tuần 8:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Thành thạo AWS Transit Gateway cho multi-VPC networking:
+  * Hiểu rõ AWS Transit Gateway architecture và so sánh với VPC Peering
+  * Nắm vững route table propagation và associations
+  * Tạo Transit Gateway thành công và configure settings
+  * Attach 3 VPCs vào Transit Gateway
+  * Cấu hình Transit Gateway route tables cho inter-VPC routing
+  * Set up route propagation tự động
+  * Launch EC2 instances trong các VPCs và test connectivity
+  * Tất cả VPCs có thể communicate qua Transit Gateway
+  * Monitor Transit Gateway metrics và traffic trên CloudWatch
+  * Implement Transit Gateway Network Manager (optional)
+  * Nắm vững kiến trúc networking phức tạp với Transit Gateway
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Tối ưu hóa chi phí EC2 với Lambda automation:
+  * Hiểu rõ các phương pháp tối ưu chi phí EC2 (right-sizing, scheduling, Savings Plans)
+  * Tìm hiểu về Lambda functions cho infrastructure automation
+  * Nắm vững resource tagging best practices (Environment, Schedule, CostCenter)
+  * Tạo IAM roles với permissions phù hợp cho Lambda execution
+  * Viết Lambda function để stop EC2 instances dựa trên tags
+  * Viết Lambda function để start EC2 instances theo schedule
+  * Implement resource tagging strategy cho EC2 instances
+  * Configure EventBridge (CloudWatch Events) rules cho scheduled execution
+  * Set up cron expressions cho business hours (weekdays only)
+  * Test automated start/stop schedule hoạt động đúng
+  * Lambda functions filtering instances based on tags
+  * Monitor Lambda execution logs và troubleshooting
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Monitoring và Notifications cho cost optimization:
+  * Implement SNS notifications cho Lambda execution results
+  * Subscribe email endpoints cho alerts
+  * Configure CloudWatch alarms cho cost monitoring
+  * Create CloudWatch dashboard hiển thị cost metrics và instance states
+  * Email notifications hoạt động khi instances start/stop
+  * Calculate cost savings từ automation solution
+  * Document toàn bộ solution architecture và ROI
+  * Hoàn thành giải pháp tối ưu chi phí tự động và scalable

@@ -1,54 +1,94 @@
 ---
-title: "Worklog Tuần 10"
+title: "Nhật ký công việc Tuần 10"
 date: 2024-01-01
-weight: 2
+weight: 10
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
 ### Mục tiêu tuần 10:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Triển khai AWS WAF để bảo vệ và bảo mật web application.
+* Thành thạo quản lý tài nguyên với Resource Tags, Resource Groups và IAM policies.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - Nghiên cứu khái niệm và kiến trúc AWS WAF<br>- Tìm hiểu về OWASP Top 10 vulnerabilities<br>- Tạo S3 bucket và deploy ứng dụng web mẫu (OWASP Juice Shop)<br>- Test chức năng và xác định lỗ hổng bảo mật | 22/06/2026 | 22/06/2026 | <https://000026.awsstudygroup.com/> |
+| 3 | - Tạo Web ACL từ WAF console<br>- Associate Web ACL với CloudFront hoặc ALB<br>- Implement managed rules từ AWS<br>- Configure rate-based rules và test | 23/06/2026 | 23/06/2026 | <https://000026.awsstudygroup.com/> |
+| 4 | - Tạo custom rules cho SQL injection protection<br>- Configure XSS (Cross-Site Scripting) rules<br>- Test custom rules với attack simulations<br>- Implement IP set rules | 24/06/2026 | 24/06/2026 | <https://000026.awsstudygroup.com/> |
+| 5 | - Enable WAF logging tới S3 hoặc CloudWatch Logs<br>- Analyze WAF logs và fine-tune rules<br>- Configure CloudWatch alarms cho WAF<br>- Document WAF configuration | 25/06/2026 | 25/06/2026 | <https://000026.awsstudygroup.com/> |
+| 6 | - Nghiên cứu resource tagging strategies và best practices<br>- Chuẩn bị EC2 resources cho tagging<br>- Tag EC2 instances và EBS volumes sử dụng Console<br>- Filter và organize tagged resources | 26/06/2026 | 28/06/2026 | <https://000027.awsstudygroup.com/><br><https://000028.awsstudygroup.com/> |
 
 ### Kết quả đạt được tuần 10:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Thành thạo AWS WAF cho web application security:
+  * Hiểu rõ khái niệm và kiến trúc AWS WAF
+  * Nắm vững các lỗ hổng web phổ biến (OWASP Top 10): SQL Injection, XSS, CSRF, etc.
+  * Hiểu về Web ACL, Rules và Rule Groups
+  * Tạo S3 bucket và deploy ứng dụng web mẫu có lỗ hổng (OWASP Juice Shop)
+  * Test và xác định các security vulnerabilities trong application
+  * Tạo Web ACL từ WAF console và associate với CloudFront/ALB thành công
+  * Configure Web ACL settings đúng
+  * Implement managed rules từ AWS Managed Rules
+  * Configure rate-based rules để chống DDoS
+  * Test rules chống lại sample attacks và verify blocking
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Nắm vững custom WAF rules và advanced configuration:
+  * Tạo custom rules cho specific threats
+  * Implement SQL injection protection rules
+  * Configure XSS (Cross-Site Scripting) prevention rules
+  * Test custom rules với attack simulations và penetration testing
+  * Tạo advanced custom rules với complex conditions
+  * Configure rule priority và actions (Allow, Block, Count)
+  * Implement IP set rules cho blacklist/whitelist
+  * Test comprehensive rule set với real-world scenarios
+  * Custom rules bảo vệ chống SQL injection và XSS attacks thành công
+  * Rule priority được tối ưu cho performance
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Triển khai WAF logging và monitoring:
+  * Enable WAF logging tới S3 bucket và CloudWatch Logs
+  * Configure request sampling để analyze traffic patterns
+  * Analyze WAF logs để identify attack patterns
+  * Review blocked và allowed requests
+  * Fine-tune rules dựa trên actual traffic và logs
+  * Configure CloudWatch alarms cho WAF metrics (blocked requests, rate limits)
+  * Monitor WAF effectiveness và adjust rules
+  * Document complete WAF configuration, rules và testing results
+  * WAF protection hoạt động hiệu quả chống lại common web attacks
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Thành thạo Resource Tagging và Resource Groups:
+  * Nghiên cứu và design comprehensive resource tagging strategy
+  * Hiểu tagging best practices và naming conventions
+  * Tag categories: Environment (Dev/Test/Prod), CostCenter, Project, Owner, Schedule
+  * Hiểu về tag-based cost allocation và billing
+  * Chuẩn bị EC2 instances, EBS volumes và other resources cho tagging
+  * Tag resources sử dụng AWS Console (point-and-click)
+  * Tag resources sử dụng AWS CLI (bulk operations)
+  * Write scripts cho automated tagging
+  * Update và delete tags via Console và CLI
+  * Filter resources theo tags trong AWS Console
+  * Search và organize tagged resources efficiently
+  * AWS CLI tagging operations thành thạo
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Sử dụng Resource Groups cho resource management:
+  * Tạo Resource Groups dựa trên tag queries
+  * Configure Resource Groups với complex tag filters
+  * Sử dụng Resource Groups để group related resources
+  * Test Resource Groups functionality cho bulk operations
+  * Monitor resources trong groups
+  * Resource Groups giúp organize và manage resources hiệu quả
+  * Efficient resource organization đạt được
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Implement IAM tag-based access control (ABAC):
+  * Nghiên cứu về IAM attribute-based access control (ABAC)
+  * Hiểu tag-based IAM policies
+  * Tạo IAM users cho testing scenarios
+  * Design IAM policies dựa trên resource tags
+  * Tạo IAM policy cho phép access chỉ tới resources với specific tags
+  * Implement tag-based permissions cho EC2 operations (Start, Stop, Terminate)
+  * Test IAM policies với different users và scenarios
+  * Verify access control: users chỉ access được tagged resources
+  * Enforce tagging requirements qua IAM policies
+  * Tag-based IAM policies working correctly
+  * Document tag-based security model và best practices
+  * Hiểu rõ cách scale security với tags trong large environments

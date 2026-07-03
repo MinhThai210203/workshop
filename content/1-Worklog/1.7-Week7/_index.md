@@ -1,52 +1,51 @@
 ---
 title: "Week 7 Worklog"
 date: 2024-01-01
-weight: 1
+weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
 ### Week 7 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Build CI/CD pipeline for container deployment with GitLab and AWS ECS.
+* Implement security monitoring and VPC Peering with CloudFormation.
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | --- | --- | --- | --- |
+| 2 | - Research CI/CD architecture on Amazon ECS<br>- Learn Docker containerization and ECS Task Definitions<br>- Environment preparation: create ECS Cluster, ECR repository<br>- Configure GitLab repository and create Dockerfile | 06/01/2026 | 06/01/2026 | <https://000017.awsstudygroup.com/> |
+| 3 | - Write GitLab CI/CD configuration file (.gitlab-ci.yml)<br>- Integrate GitHub Actions with AWS CodeBuild<br>- Configure automated build and push Docker image<br>- Deploy application to ECS through CI/CD | 06/02/2026 | 06/02/2026 | <https://000017.awsstudygroup.com/> |
+| 4 | - Learn AWS Security Hub and security standards<br>- Enable AWS Security Hub in account<br>- Configure security standards (CIS AWS Foundations, PCI DSS)<br>- Analyze security findings and create custom insights | 06/03/2026 | 06/03/2026 | <https://000018.awsstudygroup.com/> |
+| 5 | - Research VPC Peering architecture and use cases<br>- Create CloudFormation template for multi-VPC architecture<br>- Configure VPC Peering connection and update route tables<br>- Launch EC2 instances in both VPCs | 06/04/2026 | 06/04/2026 | <https://000019.awsstudygroup.com/> |
+| 6 | - Configure Security Groups for peered VPCs<br>- Test connectivity between instances via private IPs<br>- Implement security best practices for VPC Peering<br>- Configure Network ACLs and document architecture | 06/05/2026 | 06/05/2026 | <https://000019.awsstudygroup.com/> |
 
 ### Week 7 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Mastered CI/CD pipeline for container deployment:
+  * Understand CI/CD pipeline workflow on Amazon ECS
+  * Proficient in Docker containerization and ECS Task Definitions
+  * Successfully integrated GitLab CI/CD with AWS services
+  * Wrote GitLab CI/CD configuration file (.gitlab-ci.yml) and GitHub Actions workflow
+  * Successfully created ECS cluster, ECR repository for Docker image storage
+  * Set up IAM roles for ECS Task execution
+  * CI/CD pipeline working end-to-end, application deployed automatically on code changes
+  * Logs and monitoring fully configured
 
-* Successfully created and configured an AWS Free Tier account.
+* Implemented AWS Security Hub for security monitoring:
+  * Understand AWS Security Hub and AWS Foundational Security Best Practices
+  * Enabled AWS Security Hub and configured security standards (CIS AWS Foundations, PCI DSS)
+  * Analyzed security findings and compliance status
+  * Set up automated remediation with AWS Config
+  * Created custom insights and security dashboards for security monitoring
+  * Security Hub helps detect and remediate security vulnerabilities
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Mastered VPC Peering with Infrastructure as Code:
+  * Researched VPC Peering architecture, use cases, and routing
+  * Created CloudFormation template for multi-VPC architecture
+  * Successfully deployed 2 VPCs via CloudFormation stack
+  * Established VPC Peering connection and updated route tables for peering traffic
+  * Launched EC2 instances in both VPCs
+  * Configured Security Groups for peered VPCs
+  * Tested and verified connectivity between instances via private IPs (ICMP ping, SSH connection)
+  * Implemented security best practices: Network ACLs, least privilege principle
+  * Cross-VPC connectivity working perfectly via private network

@@ -1,54 +1,80 @@
 ---
-title: "Worklog Tuần 9"
+title: "Nhật ký công việc Tuần 9"
 date: 2024-01-01
-weight: 1
+weight: 9
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
 ### Mục tiêu tuần 9:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Triển khai CI/CD pipeline với AWS CodePipeline, CodeBuild và CodeDeploy.
+* Implement hybrid storage solution với AWS Storage Gateway.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - Nghiên cứu AWS CI/CD services ecosystem<br>- Chuẩn bị infrastructure: VPC, Security Groups, S3 bucket<br>- Tạo IAM roles cho CI/CD services<br>- Install và configure CodeDeploy Agent trên EC2 | 15/06/2026 | 15/06/2026 | <https://000023.awsstudygroup.com/> |
+| 3 | - Tạo AWS CodeCommit repository<br>- Configure Git credentials cho HTTPS connections<br>- Clone repository và push sample application code<br>- Configure service roles cho CodePipeline | 16/06/2026 | 16/06/2026 | <https://000023.awsstudygroup.com/> |
+| 4 | - Tạo CodeBuild project với buildspec.yml<br>- Write buildspec.yml cho Node.js application<br>- Tạo CodeDeploy application và deployment groups<br>- Configure appspec.yml và test manual deployment | 17/06/2026 | 17/06/2026 | <https://000023.awsstudygroup.com/> |
+| 5 | - Tạo CodePipeline với 3 stages: Source, Build, Deploy<br>- Test end-to-end CI/CD pipeline<br>- Commit code changes và watch automatic deployment<br>- Monitor pipeline execution và troubleshoot | 18/06/2026 | 18/06/2026 | <https://000023.awsstudygroup.com/> |
+| 6 | - Tìm hiểu AWS Storage Gateway types và use cases<br>- Tạo S3 bucket cho File Gateway storage<br>- Launch EC2 instance với AMI Storage Gateway<br>- Configure Storage Gateway và create file shares | 19/06/2026 | 20/06/2026 | <https://000024.awsstudygroup.com/> |
 
 ### Kết quả đạt được tuần 9:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Thành thạo AWS CI/CD services cho application deployment:
+  * Hiểu rõ AWS CI/CD services ecosystem: CodePipeline, CodeBuild, CodeDeploy, CodeCommit
+  * So sánh AWS CodeCommit vs GitHub vs GitLab
+  * Chuẩn bị infrastructure đầy đủ: VPC, Security Groups, S3 bucket for artifacts
+  * Tạo IAM roles và policies cho tất cả CI/CD services
+  * Set up EC2 instances với appropriate IAM instance profile
+  * Install và configure CodeDeploy Agent thành công trên EC2
+  * CodeDeploy Agent hoạt động và có thể nhận deployments
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Nắm vững AWS CodeCommit và Git integration:
+  * Tạo AWS CodeCommit repository thành công
+  * Configure Git credentials cho HTTPS connections
+  * Clone repository và push sample Node.js application code
+  * Set up Git connection từ local machine
+  * Create branches và test Git workflow
+  * Migrate repository sang GitLab/GitHub (optional practice)
+  * Configure service roles cho CodePipeline để access CodeCommit
+  * Set up IAM users với appropriate Git permissions
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Triển khai CodeBuild và CodeDeploy:
+  * Tạo CodeBuild project với build environment configuration
+  * Write buildspec.yml cho Node.js application (install, build, artifacts)
+  * Test CodeBuild manually và review build logs
+  * Troubleshoot build failures
+  * Tạo CodeDeploy application và deployment groups
+  * Configure appspec.yml file với deployment hooks
+  * Set up deployment configuration (AllAtOnce, HalfAtATime, OneAtATime)
+  * Test manual deployment với CodeDeploy thành công
+  * CodeBuild và CodeDeploy hoạt động độc lập
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Hoàn thành CI/CD Pipeline với CodePipeline:
+  * Tạo CodePipeline với 3 stages: Source (CodeCommit), Build (CodeBuild), Deploy (CodeDeploy)
+  * Configure pipeline settings và service role
+  * Link tất cả services together trong pipeline
+  * Test end-to-end CI/CD pipeline thành công
+  * Commit code changes và watch automatic deployment
+  * Monitor pipeline execution từ source đến production
+  * Troubleshoot failed deployments và implement rollback strategies
+  * Complete CI/CD pipeline hoạt động tự động, code changes được deploy automatically
+  * Hiểu rõ best practices cho CI/CD trên AWS
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Triển khai AWS Storage Gateway cho hybrid storage:
+  * Nghiên cứu về AWS Storage Gateway types (File Gateway, Volume Gateway, Tape Gateway)
+  * Hiểu File Gateway architecture và use cases
+  * Hybrid cloud storage strategies
+  * Tạo S3 bucket cho File Gateway storage backend
+  * Launch EC2 instance với AMI Storage Gateway provided by AWS
+  * Configure Storage Gateway và activate
+  * Create File Gateway thành công
+  * Set up SMB/NFS file shares
+  * Configure guest access settings và permissions
+  * Mount file share trên on-premises machine (Windows/Linux)
+  * Test file operations: upload, download, modify
+  * Verify files được sync tự động lên S3
+  * Files hoạt động seamlessly giữa on-premises và cloud storage
+  * Monitor Storage Gateway metrics trên CloudWatch
+  * Hoàn thành hybrid storage solution
