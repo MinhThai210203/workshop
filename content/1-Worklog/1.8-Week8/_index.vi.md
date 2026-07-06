@@ -7,8 +7,9 @@ pre: " <b> 1.8. </b> "
 ---
 ### Mục tiêu tuần 8:
 
-* Triển khai AWS Transit Gateway cho multi-VPC connectivity.
-* Tối ưu hóa chi phí EC2 với Lambda automation và resource tagging.
+* Triển khai AWS Transit Gateway để kết nối nhiều VPCs trong kiến trúc hub-and-spoke.
+* Tối ưu hóa chi phí EC2 với Lambda automation để bật/tắt instances theo lịch trình.
+* Triển khai chiến lược resource tagging và lập lịch với EventBridge.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |

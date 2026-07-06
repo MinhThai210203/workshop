@@ -7,7 +7,9 @@ pre: " <b> 1.3. </b> "
 ---
 ### Mục tiêu tuần 3:
 
-* Giới thiệu về Amazon EC2.
+* Giới thiệu về Amazon EC2 và các khái niệm cơ bản.
+* Tìm hiểu về các loại instance, AMI, EBS volumes và Elastic IP.
+* Thực hành khởi chạy, kết nối và quản lý các EC2 instances.
 * Tìm hiểu và thực hành triển khai ứng dụng Node.js trên EC2.
 
 ### Các công việc cần triển khai trong tuần này:

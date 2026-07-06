@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 3. </b> "
 ---
 
-This section will list and introduce the blogs you have posted to [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj).
-
 ###  [Blog 1 - AWS SYSTEMS MANAGER – CENTRALIZED MANAGEMENT SOLUTION FOR HYBRID CLOUD ENVIRONMENTS](3.1-Blog1/)
 This blog introduces AWS Systems Manager (SSM) - a service that helps centrally manage resources on AWS and On-Premises servers from a single platform. With features like Session Manager (secure server access without SSH/RDP) and Patch Manager (automated system updates), this is a powerful solution that helps businesses manage Hybrid Cloud environments in a centralized, secure, and efficient manner.
 

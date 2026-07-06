@@ -1,52 +1,44 @@
 ---
-title: "Week 11 Worklog"
+title: "Week 11 Work Log"
 date: 2024-01-01
-weight: 2
+weight: 11
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
 ### Week 11 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Limit user permissions with IAM Permission Boundary to prevent privilege escalation.
+* Manage patches and run commands on multiple EC2 instances with AWS Systems Manager.
+* Centralized management and automation for server fleet operations.
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+### Tasks to be implemented this week:
+| Day | Tasks | Start Date | Completion Date | Reference Documents |
+| --- | --- | --- | --- | --- |
+| Mon | - Study IAM Permission Boundary concepts<br>- Understand effective permissions calculation<br>- Learn about privilege escalation vulnerabilities<br>- Design Permission Boundary policy for EC2 admin | 06/29/2026 | 06/29/2026 | <https://000030.awsstudygroup.com/> |
+| Tue | - Create IAM Permission Boundary policy<br>- Create IAM User with AdministratorAccess policy<br>- Apply Permission Boundary to IAM User<br>- Verify effective permissions | 06/30/2026 | 06/30/2026 | <https://000030.awsstudygroup.com/> |
+| Wed | - Test IAM User with Permission Boundary<br>- Verify EC2 operations allowed<br>- Verify other services denied<br>- Test privilege escalation scenarios<br>- Document findings and best practices | 07/01/2026 | 07/01/2026 | <https://000030.awsstudygroup.com/> |
+| Thu | - Study AWS Systems Manager architecture<br>- Learn about Session Manager, Patch Manager, Run Command<br>- Create IAM Role for Systems Manager<br>- Launch EC2 instances and attach IAM Role<br>- Configure Patch Manager with Maintenance Window | 07/02/2026 | 07/02/2026 | <https://000031.awsstudygroup.com/> |
+| Fri | - Configure Run Command to execute scripts<br>- Install CloudWatch Agent on multiple instances<br>- Run Patch Manager scan and update<br>- Test Session Manager connections<br>- Monitor operations in Systems Manager console | 07/03/2026 | 07/03/2026 | <https://000031.awsstudygroup.com/> |
 
 ### Week 11 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Mastered IAM Permission Boundary:
+  * Understand IAM Permission Boundary is an advanced feature that limits maximum permissions
+  * Effective permissions = Identity-based policy ∩ Permission Boundary
+  * Use case: Prevent privilege escalation when users create new IAM entities
+  * Created Permission Boundary policy limiting permissions to EC2 service only
+  * Created IAM User `EC2Admin` with AdministratorAccess but applied Permission Boundary
+  * Successfully tested: User only has permissions on EC2, cannot access S3, RDS, Lambda
+  * Cannot create new IAM users or modify permissions (prevent privilege escalation)
+  * Simplified permission management for multiple users with changing roles
 
-* Successfully created and configured an AWS Free Tier account.
+* Mastered AWS Systems Manager:
+  * Understand features: Session Manager, Patch Manager, Run Command, Fleet Manager
+  * Created IAM Role `SSMInstanceRole` and launched 3 EC2 instances (Amazon Linux 2)
+  * Configured Patch Manager with Maintenance Window (Every Sunday, 2:00 AM)
+  * Ran Patch Manager scan: detected 15 missing security patches
+  * Patch installation successful: 100% instances compliant
+  * Configured Run Command: Installed CloudWatch Agent and executed custom scripts
+  * Tested Session Manager: Connected without SSH keys or bastion hosts
+  * Operations time reduced 80%, security improved with full audit trail
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...

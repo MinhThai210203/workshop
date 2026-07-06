@@ -7,8 +7,9 @@ pre: " <b> 1.5. </b> "
 ---
 ### Mục tiêu tuần 5:
 
-* Nghiên cứu AWS Command Line Interface (AWS CLI).
-* Sử dụng AWS IAM Identity Center và AWS Backup.
+* Nghiên cứu và thành thạo AWS Command Line Interface (AWS CLI).
+* Triển khai AWS IAM Identity Center để quản lý danh tính tập trung.
+* Cấu hình AWS Backup để tự động sao lưu và chiến lược khôi phục thảm họa.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |

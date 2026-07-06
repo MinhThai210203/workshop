@@ -8,6 +8,8 @@ pre: " <b> 1.2. </b> "
 ### Mục tiêu tuần 2:
 
 * Bắt đầu với Amazon VPC và AWS VPN Site-to-Site.
+* Tìm hiểu về kiến trúc VPC, subnets, routing tables và security groups.
+* Thiết lập kết nối bảo mật giữa on-premises và AWS cloud với VPN.
 * Tìm hiểu và thực hành tạo VPC, Security Groups, VPN Connection.
 
 ### Các công việc cần triển khai trong tuần này:

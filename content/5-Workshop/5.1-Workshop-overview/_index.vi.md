@@ -1,19 +1,83 @@
 ---
-title : "Giới thiệu"
-date : 2024-01-01 
-weight : 1
-chapter : false
-pre : " <b> 5.1. </b> "
+title: "Giới thiệu"
+date: 2024-01-01
+weight: 1
+chapter: false
+pre: " <b> 5.1. </b> "
 ---
 
-#### Giới thiệu về VPC Endpoint
+#### Giới thiệu về ITCoach
 
-+ Điểm cuối VPC (endpoint) là thiết bị ảo. Chúng là các thành phần VPC có thể mở rộng theo chiều ngang, dự phòng và có tính sẵn sàng cao. Chúng cho phép giao tiếp giữa tài nguyên điện toán của bạn và dịch vụ AWS mà không gây ra rủi ro về tính sẵn sàng.
-+ Tài nguyên điện toán đang chạy trong VPC có thể truy cập Amazon S3 bằng cách sử dụng điểm cuối Gateway. Interface Endpoint  PrivateLink có thể được sử dụng bởi tài nguyên chạy trong VPC hoặc tại TTDL.
+ITCoach là nền tảng luyện phỏng vấn IT thông minh ứng dụng AI, giúp sinh viên IT và người mới đi làm rèn luyện kỹ năng phỏng vấn thực tế. Nền tảng được xây dựng hoàn toàn trên kiến trúc AWS Serverless, đảm bảo:
 
-#### Tổng quan về workshop
-Trong workshop này, bạn sẽ sử dụng hai VPC.
-+ **"VPC Cloud"** dành cho các tài nguyên cloud như Gateway endpoint và EC2 instance để kiểm tra.
-+ **"VPC On-Prem"** mô phỏng môi trường truyền thống như nhà máy hoặc trung tâm dữ liệu của công ty. Một EC2 Instance chạy phần mềm StrongSwan VPN đã được triển khai trong "VPC On-prem" và được cấu hình tự động để thiết lập đường hầm VPN Site-to-Site với AWS Transit Gateway. VPN này mô phỏng kết nối từ một vị trí tại TTDL (on-prem) với AWS cloud. Để giảm thiểu chi phí, chỉ một phiên bản VPN được cung cấp để hỗ trợ workshop này. Khi lập kế hoạch kết nối VPN cho production workloads của bạn, AWS khuyên bạn nên sử dụng nhiều thiết bị VPN để có tính sẵn sàng cao.
+- **Không cần quản lý server**: Lambda tự động xử lý và mở rộng
+- **Chi phí thấp**: Pay-per-use, chỉ trả tiền khi sử dụng
+- **Hiệu năng cao**: CloudFront phân phối toàn cầu
+- **Bảo mật tốt**: Cognito và IAM quản lý truy cập
 
-![overview](/images/5-Workshop/5.1-Workshop-overview/diagram1.png)
+#### Tính năng chính
+
+**1. Đa dạng hình thức luyện tập:**
+- Quiz trắc nghiệm với Spaced Repetition SM-2
+- Tự luận nhập văn bản hoặc ghi âm giọng nói
+- Mô phỏng phỏng vấn thực tế với AI
+
+**2. AI đánh giá thông minh:**
+- OpenAI API chuyển giọng nói thành text
+- AI chấm điểm và đưa feedback chi tiết
+- Amazon Polly đọc phản hồi bằng giọng nói
+
+**3. Gamification:**
+- Hệ thống XP, level, badge
+- Streak học liên tục
+- Bảng xếp hạng cạnh tranh
+
+**4. Dashboard cá nhân:**
+- Theo dõi tiến độ học tập
+- Phân tích điểm yếu
+- Đề xuất nội dung ưu tiên ôn
+
+#### Kiến trúc hệ thống
+
+Trong workshop này, bạn sẽ xây dựng hệ thống với các thành phần:
+
+- **Frontend**: ReactJS trên S3 + CloudFront
+- **Backend**: 8 Lambda functions
+- **Database**: 8 bảng DynamoDB
+- **Authentication**: Amazon Cognito
+- **Message Queue**: Amazon SQS
+- **DNS & SSL**: Route 53 + ACM
+- **Monitoring**: CloudWatch + SNS
+
+![ITCoach Architecture](/images/5-Workshop/5.1-overview/architecture.png)
+
+#### Luồng xử lý chính
+
+```
+User (Browser)
+    ↓ HTTPS – itcoach24h.xyz
+Amazon Route 53 (DNS)
+    ↓
+Amazon CloudFront (CDN) ←→ S3 Static (ReactJS)
+    ↓
+Amazon API Gateway (8 endpoints, Throttling: 100 req/s)
+    ↓ Cognito Authorizer
+AWS Lambda (8 functions)
+    ├──→ DynamoDB (8 tables)
+    ├──→ S3 Audio (Presigned URL)
+    ├──→ SQS (Async Processing)
+    │      ↓
+    │   itcoach-ai-processor
+    │      ├──→ OpenAI API (STT + Evaluation)
+    │      └──→ Amazon Polly (Text-to-Speech)
+    └──→ CloudWatch → SNS (Alerts)
+```
+
+#### Thời gian ước tính
+
+- **Thiết lập hạ tầng AWS**: 1-2 giờ
+- **Deploy code (sau khi dev xong)**: 30 phút
+- **Testing và kiểm tra**: 30 phút
+
+**Tổng thời gian**: 2-3 giờ
+

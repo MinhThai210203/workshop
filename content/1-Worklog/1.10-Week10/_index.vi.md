@@ -7,8 +7,9 @@ pre: " <b> 1.10. </b> "
 ---
 ### Mục tiêu tuần 10:
 
-* Triển khai AWS WAF để bảo vệ và bảo mật web application.
-* Thành thạo quản lý tài nguyên với Resource Tags, Resource Groups và IAM policies.
+* Triển khai AWS WAF để bảo vệ ứng dụng web khỏi các tấn công phổ biến (SQL injection, XSS).
+* Thành thạo chiến lược resource tagging và Resource Groups để tổ chức tài nguyên hiệu quả.
+* Triển khai chính sách IAM dựa trên tags (ABAC) để kiểm soát truy cập dựa trên resource tags.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |

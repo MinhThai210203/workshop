@@ -7,8 +7,9 @@ pre: " <b> 1.7. </b> "
 ---
 ### Mục tiêu tuần 7:
 
-* Xây dựng CI/CD pipeline cho container deployment với GitLab và AWS ECS.
-* Triển khai giám sát bảo mật và VPC Peering với CloudFormation.
+* Xây dựng CI/CD pipeline cho triển khai container với GitLab và AWS ECS.
+* Triển khai giám sát bảo mật với AWS Security Hub.
+* Triển khai VPC Peering với CloudFormation để kết nối kiến trúc nhiều VPCs.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |

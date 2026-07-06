@@ -7,8 +7,9 @@ pre: " <b> 1.6. </b> "
 ---
 ### Week 6 Objectives:
 
-* Learn and deploy applications on Docker with AWS.
+* Learn and deploy applications on Docker containers with AWS.
 * Research and work with Amazon Elastic Container Service (ECS).
+* Configure ECS clusters, task definitions, services, and load balancing.
 
 ### Tasks to be carried out this week:
 | Day | Task | Start Date | Completion Date | Reference Material |

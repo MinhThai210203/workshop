@@ -7,8 +7,9 @@ pre: " <b> 1.10. </b> "
 ---
 ### Week 10 Objectives:
 
-* Implement AWS WAF for web application protection and security.
-* Master resource tagging and management with Resource Groups and IAM policies.
+* Implement AWS WAF to protect web applications from common attacks (SQL injection, XSS).
+* Master resource tagging strategy and Resource Groups for efficient resource organization.
+* Implement tag-based IAM policies (ABAC) to control access based on resource tags.
 
 ### Tasks to be carried out this week:
 | Day | Task | Start Date | Completion Date | Reference Material |

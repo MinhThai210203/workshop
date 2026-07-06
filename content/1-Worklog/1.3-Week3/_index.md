@@ -7,7 +7,9 @@ pre: " <b> 1.3. </b> "
 ---
 ### Week 3 Objectives:
 
-* Introduction to Amazon EC2.
+* Introduction to Amazon EC2 and its fundamental concepts.
+* Learn about instance types, AMI, EBS volumes, and Elastic IP.
+* Practice launching, connecting to, and managing EC2 instances.
 * Learn and practice deploying Node.js applications on EC2.
 
 ### Tasks to be carried out this week:

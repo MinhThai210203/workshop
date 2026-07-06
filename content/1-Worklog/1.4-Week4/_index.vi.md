@@ -7,8 +7,9 @@ pre: " <b> 1.4. </b> "
 ---
 ### Mục tiêu tuần 4:
 
-* Tìm hiểu và xây dựng bài tập cho dịch vụ Amazon RDS.
-* Triển khai Auto Scaling và Elastic Load Balancing với CloudWatch.
+* Tìm hiểu và xây dựng bài tập cho dịch vụ cơ sở dữ liệu quản lý Amazon RDS.
+* Triển khai Auto Scaling để tự động mở rộng các EC2 instances dựa trên nhu cầu.
+* Giám sát tài nguyên và thiết lập cảnh báo CloudWatch cho các chỉ số hiệu năng.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |

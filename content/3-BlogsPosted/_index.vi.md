@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 3. </b> "
 ---
 
-Tại đây sẽ là phần liệt kê, giới thiệu các blogs mà các bạn đã đăng trên [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj). 
-
 ###  [Blog 1 - AWS SYSTEMS MANAGER – GIẢI PHÁP QUẢN LÝ TẬP TRUNG CHO MÔI TRƯỜNG HYBRID CLOUD](3.1-Blog1/)
 Blog này giới thiệu AWS Systems Manager (SSM) - dịch vụ giúp quản lý tập trung các tài nguyên trên AWS và máy chủ On-Premises từ một nền tảng duy nhất. Với các tính năng như Session Manager (truy cập máy chủ an toàn không cần SSH/RDP) và Patch Manager (tự động hóa cập nhật hệ thống), đây là giải pháp mạnh mẽ giúp doanh nghiệp quản lý môi trường Hybrid Cloud một cách tập trung, an toàn và hiệu quả.
 

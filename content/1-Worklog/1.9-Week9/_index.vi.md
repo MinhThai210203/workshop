@@ -7,8 +7,9 @@ pre: " <b> 1.9. </b> "
 ---
 ### Mục tiêu tuần 9:
 
-* Triển khai CI/CD pipeline với AWS CodePipeline, CodeBuild và CodeDeploy.
-* Implement hybrid storage solution với AWS Storage Gateway.
+* Triển khai hoàn chỉnh CI/CD pipeline với AWS CodePipeline, CodeBuild và CodeDeploy.
+* Cấu hình tích hợp Git với AWS CodeCommit và triển khai tự động.
+* Triển khai giải pháp hybrid storage với AWS Storage Gateway cho tích hợp on-premises.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |

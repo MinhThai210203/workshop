@@ -7,8 +7,9 @@ pre: " <b> 1.6. </b> "
 ---
 ### Mục tiêu tuần 6:
 
-* Học tập và triển khai ứng dụng trên Docker với AWS.
+* Học tập và triển khai ứng dụng trên các Docker containers với AWS.
 * Nghiên cứu và làm việc với Amazon Elastic Container Service (ECS).
+* Cấu hình các ECS clusters, task definitions, services và load balancing.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |

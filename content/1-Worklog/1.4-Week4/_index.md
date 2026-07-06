@@ -7,8 +7,9 @@ pre: " <b> 1.4. </b> "
 ---
 ### Week 4 Objectives:
 
-* Learn and build exercises for Amazon RDS service.
-* Deploy Auto Scaling and Elastic Load Balancing with CloudWatch.
+* Learn and build exercises for Amazon RDS managed database service.
+* Deploy Auto Scaling to automatically scale EC2 instances based on demand.
+* Monitor resources and set up CloudWatch alarms for performance metrics.
 
 ### Tasks to be carried out this week:
 | Day | Task | Start Date | Completion Date | Reference Material |

@@ -5,36 +5,48 @@ weight: 7
 chapter: false
 pre: " <b> 7. </b> "
 ---
->Tại đây bạn có thể tự do đóng góp ý kiến cá nhân về những trải nghiệm khi tham gia chương trình First Cloud AI Journey, giúp team FCAJ cải thiện những vấn đề còn thiếu sót dựa trên các hạng mục sau:
 
 ### Đánh giá chung
 
 **1. Môi trường làm việc**  
-Môi trường làm việc rất thân thiện và cởi mở. Các thành viên trong FCAJ luôn sẵn sàng hỗ trợ khi mình gặp khó khăn, kể cả ngoài giờ làm việc. Không gian làm việc gọn gàng, thoải mái, giúp mình tập trung tốt hơn. Tuy nhiên, mình nghĩ có thể bổ sung thêm một số buổi giao lưu hoặc team bonding để mọi người hiểu nhau hơn.
+Môi trường làm việc tại AWS rất chuyên nghiệp và năng động. Văn phòng hiện đại, đầy đủ trang thiết bị và công cụ làm việc. Không khí làm việc cởi mở, khuyến khích sáng tạo và đổi mới.
 
 **2. Sự hỗ trợ của mentor / team admin**  
-Mentor hướng dẫn rất chi tiết, giải thích rõ ràng khi mình chưa hiểu và luôn khuyến khích mình đặt câu hỏi. Team admin hỗ trợ các thủ tục, tài liệu và tạo điều kiện để mình làm việc thuận lợi. Mình đánh giá cao việc mentor cho phép mình thử và tự xử lý vấn đề thay vì chỉ đưa đáp án.
+Mentor và team AWS luôn nhiệt tình hướng dẫn, giải đáp thắc mắc kỹ thuật một cách chi tiết. Đặc biệt là các buổi workshop và session chia sẻ kinh nghiệm thực tế về kiến trúc serverless, best practices trên AWS. Team admin hỗ trợ rất tốt về mặt tài liệu, tài khoản AWS, và các vấn đề hành chính.
 
 **3. Sự phù hợp giữa công việc và chuyên ngành học**  
-Công việc mình được giao phù hợp với kiến thức mình đã học ở trường, đồng thời mở rộng thêm những mảng mới mà mình chưa từng được tiếp cận. Nhờ vậy, mình vừa củng cố kiến thức nền tảng, vừa học thêm kỹ năng thực tế.
+Chương trình Bootcamp phù hợp hoàn toàn với chuyên ngành CNTT. Được học và thực hành trực tiếp các dịch vụ AWS như Lambda, DynamoDB, API Gateway, CloudFront, Cognito - tất cả đều là kỹ năng cần thiết cho Cloud Engineer và Full-stack Developer. Kiến thức thu được áp dụng được ngay vào thực tế.
 
 **4. Cơ hội học hỏi & phát triển kỹ năng**  
-Trong quá trình thực tập, mình học được nhiều kỹ năng mới như sử dụng công cụ quản lý dự án, kỹ năng làm việc nhóm, và cả cách giao tiếp chuyên nghiệp trong môi trường công ty. Mentor cũng chia sẻ nhiều kinh nghiệm thực tế giúp mình định hướng tốt hơn cho sự nghiệp.
+Học được rất nhiều về AWS Serverless Architecture, từ thiết kế hệ thống, xây dựng infrastructure, đến triển khai và monitoring. Ngoài kỹ năng kỹ thuật, còn rèn luyện được soft skills như làm việc nhóm, quản lý thời gian, và present ý tưởng. Cơ hội tiếp cận công nghệ AI (OpenAI API, Amazon Polly) là điểm cộng lớn.
 
 **5. Văn hóa & tinh thần đồng đội**  
-Văn hóa công ty rất tích cực: mọi người tôn trọng lẫn nhau, làm việc nghiêm túc nhưng vẫn vui vẻ. Khi có dự án gấp, mọi người cùng nhau cố gắng, hỗ trợ không phân biệt vị trí. Điều này giúp mình cảm thấy mình là một phần của tập thể, dù chỉ là thực tập sinh.
+Văn hóa AWS rất coi trọng customer obsession và innovation. Tinh thần đồng đội trong bootcamp rất tốt, mọi người cùng nhau giải quyết vấn đề, share kiến thức không giấu giếm. Các buổi brainstorming và code review rất bổ ích, giúp học hỏi từ nhau.
 
 **6. Chính sách / phúc lợi cho thực tập sinh**  
-Công ty có hỗ trợ phụ cấp thực tập và tạo điều kiện về thời gian linh hoạt khi cần thiết. Ngoài ra, việc được tham gia các buổi đào tạo nội bộ là một điểm cộng lớn.
+AWS cung cấp AWS account để thực hành, tài liệu đầy đủ, và môi trường làm việc tốt. Chương trình được tổ chức bài bản với roadmap rõ ràng, milestone cụ thể. Được hỗ trợ credit AWS để thử nghiệm các dịch vụ mà không lo chi phí.
 
+---
 
-### Một số câu hỏi khác
-- Điều bạn **hài lòng nhất** trong thời gian thực tập?  
-- Điều bạn nghĩ công ty **cần cải thiện** cho các thực tập sinh sau?  
-- Nếu giới thiệu cho bạn bè, bạn có **khuyên họ thực tập ở đây không**? Vì sao?  
+### Góp ý và đề xuất
 
+**Điểm mạnh của chương trình:**
+- Nội dung workshop thực tế, áp dụng được ngay
+- Mentor có kinh nghiệm, hỗ trợ nhiệt tình
+- Được hands-on với AWS services thực tế
+- Tài liệu và hướng dẫn chi tiết, dễ follow
 
-### Đề xuất & mong muốn
-- Bạn có đề xuất gì để cải thiện trải nghiệm trong kỳ thực tập?  
-- Bạn có muốn tiếp tục chương trình này trong tương lai?
-- Góp ý khác (tự do chia sẻ):
+**Điểm cần cải thiện:**
+- Có thể bổ sung thêm session về AWS Cost Optimization
+- Cập nhật lại bài thực hành với các dịch vụ bị thay đổi giao diện mới
+- Nên có thêm buổi mock interview hoặc career guidance
+
+**Đề xuất cho các kỳ sau:**
+- Tổ chức thêm các buổi networking với AWS engineers
+- Cung cấp AWS certification voucher cho những bạn hoàn thành tốt
+
+---
+
+### Kết luận
+
+Tôi đánh giá cao chương trình **Workforce Bootcamp - First Cloud AI Journey**. Đây là cơ hội tuyệt vời để sinh viên IT tiếp cận công nghệ cloud và AI thực tế. Tôi sẽ giới thiệu chương trình này cho các bạn sinh viên khác và hy vọng sẽ có cơ hội tham gia các chương trình của AWS trong tương lai.

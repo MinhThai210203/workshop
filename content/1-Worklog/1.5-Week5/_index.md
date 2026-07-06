@@ -7,8 +7,9 @@ pre: " <b> 1.5. </b> "
 ---
 ### Week 5 Objectives:
 
-* Research AWS Command Line Interface (AWS CLI).
-* Use AWS IAM Identity Center and AWS Backup.
+* Research and master AWS Command Line Interface (AWS CLI).
+* Implement AWS IAM Identity Center for centralized identity management.
+* Configure AWS Backup for automated backup and disaster recovery strategy.
 
 ### Tasks to be carried out this week:
 | Day | Task | Start Date | Completion Date | Reference Material |

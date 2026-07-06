@@ -7,8 +7,9 @@ pre: " <b> 1.8. </b> "
 ---
 ### Week 8 Objectives:
 
-* Deploy AWS Transit Gateway for multi-VPC connectivity.
-* Optimize EC2 costs with Lambda automation and resource tagging.
+* Deploy AWS Transit Gateway to connect multiple VPCs in hub-and-spoke architecture.
+* Optimize EC2 costs with Lambda automation for scheduled instance start/stop.
+* Implement resource tagging strategy and EventBridge scheduling.
 
 ### Tasks to be carried out this week:
 | Day | Task | Start Date | Completion Date | Reference Material |

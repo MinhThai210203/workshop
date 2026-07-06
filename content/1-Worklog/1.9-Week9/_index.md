@@ -7,8 +7,9 @@ pre: " <b> 1.9. </b> "
 ---
 ### Week 9 Objectives:
 
-* Deploy CI/CD pipeline with AWS CodePipeline, CodeBuild, and CodeDeploy.
-* Implement hybrid storage solution with AWS Storage Gateway.
+* Deploy complete CI/CD pipeline with AWS CodePipeline, CodeBuild, and CodeDeploy.
+* Configure Git integration with AWS CodeCommit and automated deployment workflows.
+* Implement hybrid storage solution with AWS Storage Gateway for on-premises integration.
 
 ### Tasks to be carried out this week:
 | Day | Task | Start Date | Completion Date | Reference Material |

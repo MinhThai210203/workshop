@@ -8,7 +8,8 @@ pre: " <b> 1.7. </b> "
 ### Week 7 Objectives:
 
 * Build CI/CD pipeline for container deployment with GitLab and AWS ECS.
-* Implement security monitoring and VPC Peering with CloudFormation.
+* Implement security monitoring with AWS Security Hub.
+* Deploy VPC Peering with CloudFormation for multi-VPC architecture connectivity.
 
 ### Tasks to be carried out this week:
 | Day | Task | Start Date | Completion Date | Reference Material |

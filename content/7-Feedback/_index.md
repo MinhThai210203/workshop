@@ -6,38 +6,47 @@ chapter: false
 pre: " <b> 7. </b> "
 ---
 
-> Here, you can freely share your personal opinions about your experience participating in the First Cloud AI Journey program. This will help the FCAJ team improve any shortcomings based on the following aspects:
-
 ### Overall Evaluation
 
 **1. Working Environment**  
-The working environment is very friendly and open. FCAJ members are always willing to help whenever I encounter difficulties, even outside working hours. The workspace is tidy and comfortable, helping me focus better. However, I think it would be nice to have more social gatherings or team bonding activities to strengthen relationships.
+The working environment at AWS is very professional and dynamic. The office is modern with full equipment and working tools. The work atmosphere is open, encouraging creativity and innovation.
 
 **2. Support from Mentor / Team Admin**  
-The mentor provides very detailed guidance, explains clearly when I don’t understand, and always encourages me to ask questions. The admin team supports administrative tasks, provides necessary documents, and creates favorable conditions for me to work effectively. I especially appreciate that the mentor allows me to try and solve problems myself instead of just giving the answer.
+Mentors and AWS team are always enthusiastic in providing guidance and answering technical questions in detail. Particularly valuable are the workshop sessions and experience sharing about serverless architecture and AWS best practices. The admin team provides excellent support with documentation, AWS accounts, and administrative matters.
 
 **3. Relevance of Work to Academic Major**  
-The tasks I was assigned align well with the knowledge I learned at university, while also introducing me to new areas I had never encountered before. This allowed me to both strengthen my foundational knowledge and gain practical skills.
+The Bootcamp program is completely aligned with IT majors. Getting to learn and practice AWS services directly like Lambda, DynamoDB, API Gateway, CloudFront, Cognito - all are essential skills for Cloud Engineers and Full-stack Developers. The knowledge gained is immediately applicable in practice.
 
 **4. Learning & Skill Development Opportunities**  
-During the internship, I learned many new skills such as using project management tools, teamwork skills, and professional communication in a corporate environment. The mentor also shared valuable real-world experiences that helped me better plan my career path.
+Learned extensively about AWS Serverless Architecture, from system design, infrastructure building, to deployment and monitoring. Beyond technical skills, also developed soft skills like teamwork, time management, and presenting ideas. The opportunity to work with AI technology (OpenAI API, Amazon Polly) is a major plus.
 
 **5. Company Culture & Team Spirit**  
-The company culture is very positive: everyone respects each other, works seriously but still keeps things enjoyable. When there are urgent projects, everyone works together and supports one another regardless of their position. This made me feel like a real part of the team, even as an intern.
+AWS culture highly values customer obsession and innovation. Team spirit in the bootcamp is excellent - everyone works together to solve problems and shares knowledge openly. Brainstorming and code review sessions are very beneficial, learning from each other.
 
 **6. Internship Policies / Benefits**  
-The company provides an internship allowance and offers flexible working hours when needed. In addition, having the opportunity to join internal training sessions is a big plus.
+AWS provides AWS accounts for practice, comprehensive documentation, and a good working environment. The program is well-organized with a clear roadmap and specific milestones. AWS credits are provided to experiment with services without cost concerns.
 
 ---
 
-### Additional Questions
-- What did you find **most satisfying** during your internship?  
-- What do you think the company **should improve** for future interns?  
-- If recommending to a friend, would you **suggest they intern here**? Why or why not?  
+### Feedback and Suggestions
+
+**Program Strengths:**
+- Practical workshop content, immediately applicable
+- Experienced mentors providing enthusiastic support
+- Hands-on with real AWS services
+- Detailed and easy-to-follow documentation
+
+**Areas for Improvement:**
+- Could add sessions on AWS Cost Optimization
+- Update practice exercises for services with new interface changes
+- Should include mock interviews or career guidance sessions
+
+**Suggestions for Future Programs:**
+- Organize more networking events with AWS engineers
+- Provide AWS certification vouchers for outstanding performers
 
 ---
 
-### Suggestions & Expectations
-- Do you have any suggestions to improve the internship experience?  
-- Would you like to continue this program in the future?  
-- Any other comments (free sharing):
+### Conclusion
+
+I highly appreciate the **Workforce Bootcamp - First Cloud AI Journey** program. This is an excellent opportunity for IT students to access real cloud and AI technology. I will recommend this program to other students and hope to participate in AWS programs in the future.

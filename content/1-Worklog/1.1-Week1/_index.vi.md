@@ -9,6 +9,7 @@ pre: " <b> 1.1. </b> "
 
 * Quản lý kiểm soát truy cập với AWS IAM (Identity and Access Management).
 * Tìm hiểu và thực hành tạo Users, Groups, Roles và chuyển đổi Role.
+* Áp dụng nguyên tắc đặc quyền tối thiểu trong mô hình bảo mật IAM.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
