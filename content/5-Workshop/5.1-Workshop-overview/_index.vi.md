@@ -58,10 +58,16 @@ Trong workshop này, bạn sẽ xây dựng hệ thống với các thành phầ
 - **Database**: 8 bảng DynamoDB
 - **Authentication**: Amazon Cognito
 - **Message Queue**: Amazon SQS
+- **Security**: AWS WAF (2 Web ACLs cho CloudFront và API Gateway)
 - **DNS & SSL**: Route 53 + ACM
 - **Monitoring**: CloudWatch + SNS
 
-![ITCoach Architecture](/images/5-Workshop/5.1-overview/architecture.png)
+![ITCoach Architecture](/images/ITCoachArchitecture.png)
+
+*Lưu ý: Sơ đồ trên đã gộp các Lambda functions theo nhóm logic để dễ nhìn:*
+- *"**AWS Lambda (8 functions)**" trong sơ đồ đại diện cho 7 Lambda sync: `auth-handler`, `question-handler`, `session-handler`, `answer-handler`, `quiz-handler`, `gamification-handler`, `leaderboard-handler`*
+- *"**itcoach-ai-processor**" là Lambda async thứ 8, xử lý tác vụ AI nặng qua SQS*
+- *Trong thực tế triển khai, mỗi function được tạo riêng biệt (best practice: least privilege, cold start optimization, dễ debug)*
 
 #### Luồng xử lý chính
 
@@ -70,7 +76,11 @@ User (Browser)
     ↓ HTTPS – itcoach24h.xyz
 Amazon Route 53 (DNS)
     ↓
+AWS WAF (CloudFront - Global) ← Chặn SQL Injection, XSS, DDoS
+    ↓
 Amazon CloudFront (CDN) ←→ S3 Static (React + TypeScript)
+    ↓
+AWS WAF (API Gateway - Regional) ← Rate limiting /auth endpoint
     ↓
 Amazon API Gateway (8 endpoints, Throttling: 100 req/s)
     ↓ Cognito Authorizer

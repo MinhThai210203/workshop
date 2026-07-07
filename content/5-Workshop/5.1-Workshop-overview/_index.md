@@ -58,10 +58,16 @@ In this workshop, you will build a system with the following components:
 - **Database**: 8 DynamoDB tables
 - **Authentication**: Amazon Cognito
 - **Message Queue**: Amazon SQS
+- **Security**: AWS WAF (2 Web ACLs for CloudFront and API Gateway)
 - **DNS & SSL**: Route 53 + ACM
 - **Monitoring**: CloudWatch + SNS
 
-![ITCoach Architecture](/images/5-Workshop/5.1-overview/architecture.png)
+![ITCoach Architecture](/images/ITCoachArchitecture.png)
+
+*Note: The diagram groups Lambda functions logically for clarity:*
+- *"**AWS Lambda (8 functions)**" in the diagram represents 7 sync Lambda functions: `auth-handler`, `question-handler`, `session-handler`, `answer-handler`, `quiz-handler`, `gamification-handler`, `leaderboard-handler`*
+- *"**itcoach-ai-processor**" is the 8th async Lambda function, processing heavy AI tasks via SQS*
+- *In actual deployment, each function is created separately (best practice: least privilege, cold start optimization, easier debugging)*
 
 #### Main Processing Flow
 
@@ -70,7 +76,11 @@ User (Browser)
     ↓ HTTPS – itcoach24h.xyz
 Amazon Route 53 (DNS)
     ↓
+AWS WAF (CloudFront - Global) ← Block SQL Injection, XSS, DDoS
+    ↓
 Amazon CloudFront (CDN) ←→ S3 Static (React + TypeScript)
+    ↓
+AWS WAF (API Gateway - Regional) ← Rate limiting /auth endpoint
     ↓
 Amazon API Gateway (8 endpoints, Throttling: 100 req/s)
     ↓ Cognito Authorizer

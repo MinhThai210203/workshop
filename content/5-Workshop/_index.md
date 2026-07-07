@@ -17,8 +17,10 @@ The system includes:
 - **Backend**: 8 Lambda functions for business logic
 - **Database**: 8 DynamoDB tables for data storage
 - **Authentication**: Amazon Cognito for user management
+- **Security**: AWS WAF protecting CloudFront and API Gateway
 - **AI Integration**: OpenAI API and Amazon Polly
 - **Async Processing**: SQS for heavy task processing
+- **DNS & SSL**: Route 53 and ACM for domain and certificate management
 - **Monitoring**: CloudWatch and SNS
 
 #### Content
@@ -32,8 +34,9 @@ The system includes:
 7. [Setting up Amazon SQS](5.7-sqs/)
 8. [Creating Lambda Functions](5.8-lambda/)
 9. [Configuring API Gateway](5.9-api-gateway/)
-10. [Setting up CloudFront](5.10-cloudfront/)
-11. [Configuring Route 53 and SSL](5.11-route53-ssl/)
-12. [Monitoring with CloudWatch](5.12-monitoring/)
-13. [Deploy Code](5.13-deploy-code/)
-14. [Cleaning up Resources](5.14-cleanup/)
+10. [Setting up AWS WAF](5.10-waf/)
+11. [Setting up CloudFront](5.11-cloudfront/)
+12. [Configuring Route 53 and SSL](5.12-route53-ssl/)
+13. [Monitoring with CloudWatch](5.13-monitoring/)
+14. [Deploy Code](5.14-deploy-code/)
+15. [Cleaning up Resources](5.15-cleanup/)

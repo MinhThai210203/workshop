@@ -11,7 +11,7 @@ pre: " <b> 5.2. </b> "
 Để hoàn thành workshop này, bạn cần:
 
 1. **Tài khoản AWS** với quyền Administrator hoặc đủ quyền tạo các dịch vụ sau:
-   - IAM, S3, DynamoDB, Cognito, SQS, Lambda, API Gateway, CloudFront, Route 53, ACM, CloudWatch, SNS
+   - IAM, S3, DynamoDB, Cognito, SQS, Lambda, API Gateway, WAF, CloudFront, Route 53, ACM, CloudWatch, SNS
 
 2. **OpenAI API Key**: Đăng ký tại [platform.openai.com](https://platform.openai.com/) để sử dụng Speech-to-Text và GPT evaluation
 
@@ -37,10 +37,11 @@ Trong workshop này, bạn sẽ tạo các tài nguyên sau:
 | 6 | SQS | 2 queues (Main + DLQ) | ⬜ |
 | 7 | Lambda | 8 functions | ⬜ |
 | 8 | API Gateway | 8 endpoints + Throttling | ⬜ |
-| 9 | CloudFront | Distribution + Error Pages | ⬜ |
-| 10 | Route 53 | DNS + Domain `itcoach24h.xyz` | ⬜ |
-| 11 | ACM | SSL Certificate | ⬜ |
-| 12 | SNS + CloudWatch | Monitoring + Alerts | ⬜ |
+| 9 | AWS WAF | 2 Web ACLs (CloudFront + API Gateway) | ⬜ |
+| 10 | CloudFront | Distribution + Error Pages | ⬜ |
+| 11 | Route 53 | DNS + Domain `itcoach24h.xyz` | ⬜ |
+| 12 | ACM | SSL Certificate | ⬜ |
+| 13 | SNS + CloudWatch | Monitoring + Alerts | ⬜ |
 
 #### Thông tin quan trọng cần lưu
 
@@ -73,15 +74,18 @@ Với mức sử dụng thử nghiệm (< 1000 requests/tháng), chi phí ước
 | S3 | ~$0.05 | Static + audio files |
 | API Gateway | ~$0.01 | ~1,000 requests |
 | CloudFront | $0.00 | Free tier |
+| AWS WAF – CloudFront | $0.00 | Nằm trong 5 rule miễn phí kèm CloudFront Free plan |
+| AWS WAF – API Gateway | ~$10–15 | Web ACL Regional, không nằm trong gói miễn phí nào |
 | Cognito | $0.00 | Free tier: 50,000 MAU |
 | SQS | ~$0.00 | Free tier: 1M requests |
 | Polly | ~$0.04 | ~100,000 characters |
+| CloudWatch | ~$1–5 | Logs + Alarms |
 | SNS | ~$0.00 | Free tier |
 | Route 53 | ~$0.50 | Hosted Zone $0.50/tháng |
 | ACM | $0.00 | Miễn phí hoàn toàn |
-| **OpenAI API** | ~$1-$5 | Tùy số lượng đánh giá |
-| **Tổng AWS** | **~$0.60/tháng** | |
-| **Tổng với OpenAI** | **~$1.60-$5.60/tháng** | |
+| **Tổng AWS** | **~$12–20/tháng** | |
+| **OpenAI API** | ~$1–$5 | Tùy số lượng đánh giá |
+| **Tổng với OpenAI** | **~$13–25/tháng** | |
 
 **Chi phí một lần:**
 - Domain `itcoach24h.xyz`: ~$2-3/năm (nếu mua domain riêng)

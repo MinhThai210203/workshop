@@ -11,7 +11,7 @@ pre: " <b> 5.2. </b> "
 To complete this workshop, you need:
 
 1. **AWS Account** with Administrator privileges or sufficient permissions to create the following services:
-   - IAM, S3, DynamoDB, Cognito, SQS, Lambda, API Gateway, CloudFront, Route 53, ACM, CloudWatch, SNS
+   - IAM, S3, DynamoDB, Cognito, SQS, Lambda, API Gateway, WAF, CloudFront, Route 53, ACM, CloudWatch, SNS
 
 2. **OpenAI API Key**: Register at [platform.openai.com](https://platform.openai.com/) to use Speech-to-Text and GPT evaluation
 
@@ -37,10 +37,11 @@ In this workshop, you will create the following resources:
 | 6 | SQS | 2 queues (Main + DLQ) | ⬜ |
 | 7 | Lambda | 8 functions | ⬜ |
 | 8 | API Gateway | 8 endpoints + Throttling | ⬜ |
-| 9 | CloudFront | Distribution + Error Pages | ⬜ |
-| 10 | Route 53 | DNS + Domain `itcoach24h.xyz` | ⬜ |
-| 11 | ACM | SSL Certificate | ⬜ |
-| 12 | SNS + CloudWatch | Monitoring + Alerts | ⬜ |
+| 9 | AWS WAF | 2 Web ACLs (CloudFront + API Gateway) | ⬜ |
+| 10 | CloudFront | Distribution + Error Pages | ⬜ |
+| 11 | Route 53 | DNS + Domain `itcoach24h.xyz` | ⬜ |
+| 12 | ACM | SSL Certificate | ⬜ |
+| 13 | SNS + CloudWatch | Monitoring + Alerts | ⬜ |
 
 #### Important Information to Save
 
@@ -73,15 +74,18 @@ For trial usage (< 1000 requests/month), estimated cost:
 | S3 | ~$0.05 | Static + audio files |
 | API Gateway | ~$0.01 | ~1,000 requests |
 | CloudFront | $0.00 | Free tier |
+| AWS WAF – CloudFront | $0.00 | Included in 5 free rules with CloudFront Free plan |
+| AWS WAF – API Gateway | ~$10–15 | Regional Web ACL, not covered by any free tier |
 | Cognito | $0.00 | Free tier: 50,000 MAU |
 | SQS | ~$0.00 | Free tier: 1M requests |
 | Polly | ~$0.04 | ~100,000 characters |
+| CloudWatch | ~$1–5 | Logs + Alarms |
 | SNS | ~$0.00 | Free tier |
 | Route 53 | ~$0.50 | Hosted Zone $0.50/month |
 | ACM | $0.00 | Completely free |
-| **OpenAI API** | ~$1-$5 | Depends on evaluation volume |
-| **Total AWS** | **~$0.60/month** | |
-| **Total with OpenAI** | **~$1.60-$5.60/month** | |
+| **Total AWS** | **~$12–20/month** | |
+| **OpenAI API** | ~$1–$5 | Depends on evaluation volume |
+| **Total with OpenAI** | **~$13–25/month** | |
 
 **One-time cost:**
 - Domain `itcoach24h.xyz`: ~$2-3/year (if purchasing custom domain)

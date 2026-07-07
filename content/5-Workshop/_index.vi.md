@@ -17,8 +17,10 @@ Hệ thống bao gồm:
 - **Backend**: 8 Lambda functions xử lý nghiệp vụ
 - **Database**: 8 bảng DynamoDB lưu trữ dữ liệu
 - **Authentication**: Amazon Cognito quản lý người dùng
+- **Security**: AWS WAF bảo vệ CloudFront và API Gateway
 - **AI Integration**: OpenAI API và Amazon Polly
 - **Async Processing**: SQS xử lý tác vụ nặng
+- **DNS & SSL**: Route 53 và ACM quản lý domain và chứng chỉ
 - **Monitoring**: CloudWatch và SNS
 
 #### Nội dung
@@ -32,8 +34,9 @@ Hệ thống bao gồm:
 7. [Thiết lập Amazon SQS](5.7-sqs/)
 8. [Tạo Lambda Functions](5.8-lambda/)
 9. [Cấu hình API Gateway](5.9-api-gateway/)
-10. [Thiết lập CloudFront](5.10-cloudfront/)
-11. [Cấu hình Route 53 và SSL](5.11-route53-ssl/)
-12. [Monitoring với CloudWatch](5.12-monitoring/)
-13. [Deploy Code](5.13-deploy-code/)
-14. [Dọn dẹp tài nguyên](5.14-cleanup/)
+10. [Thiết lập AWS WAF](5.10-waf/)
+11. [Thiết lập CloudFront](5.11-cloudfront/)
+12. [Cấu hình Route 53 và SSL](5.12-route53-ssl/)
+13. [Monitoring với CloudWatch](5.13-monitoring/)
+14. [Deploy Code](5.14-deploy-code/)
+15. [Dọn dẹp tài nguyên](5.15-cleanup/)

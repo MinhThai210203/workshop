@@ -49,6 +49,7 @@ ITCoach addresses these issues with core features:
 - **Amazon SQS** asynchronously processes heavy AI tasks
 - **OpenAI API** Speech-to-Text + answer quality evaluation
 - **Amazon Polly** reads questions and responds with voice feedback
+- **AWS WAF** protects CloudFront and API Gateway from web attacks (SQLi, XSS, DDoS)
 - **Amazon CloudWatch + SNS** monitors system and sends automatic alerts
 - **Amazon Route 53 + ACM** manages DNS and SSL certificate for domain `itcoach24h.xyz`
 
@@ -62,6 +63,13 @@ ITCoach addresses these issues with core features:
 ## 3. Solution Architecture
 
 The platform applies AWS Serverless architecture with AWS Lambda as the business logic processing center.
+
+![ITCoach Architecture](/images/ITCoachArchitecture.png)
+
+*Note: The diagram groups Lambda functions logically for clarity:*
+- *"**AWS Lambda (8 functions)**" in the diagram represents 7 sync Lambda functions: `auth-handler`, `question-handler`, `session-handler`, `answer-handler`, `quiz-handler`, `gamification-handler`, `leaderboard-handler`*
+- *"**itcoach-ai-processor**" is the 8th async Lambda function, processing heavy AI tasks via SQS*
+- *In actual deployment, each function is created separately (best practice: least privilege, cold start optimization, easier debugging)*
 
 ### Main Processing Flow
 
@@ -99,6 +107,7 @@ AWS Lambda (8 functions)
 | Amazon SQS | Queue for asynchronous AI and audio processing |
 | Amazon Polly | Responds with voice feedback for sample answers |
 | OpenAI API | Speech-to-Text + answer quality evaluation |
+| AWS WAF | Protects CloudFront and API Gateway from web attacks |
 | Amazon CloudWatch | Monitors logs, metrics, system performance |
 | Amazon SNS | Sends email alerts when system errors occur |
 | Amazon Route 53 | Manages DNS for domain `itcoach24h.xyz` |
@@ -222,34 +231,47 @@ Import question bank (prioritize Frontend, Backend, Foundation Knowledge), test 
 
 | Service | Estimate | Notes |
 |---------|---------|-------|
-| AWS Lambda | ~$0.00 | Free tier 1M requests |
-| Amazon DynamoDB | ~$0.00 | On-demand, free tier 25GB |
-| Amazon S3 | ~$0.05 | Static + audio files |
-| Amazon API Gateway | ~$0.01 | ~1,000 requests |
-| Amazon CloudFront | $0.00 | Free plan |
+| AWS Lambda | ~$0.00 | Free tier 1M requests + 400,000 GB-s/month (permanent) |
+| Amazon DynamoDB | ~$0.00–1 | On-demand, free tier 25GB |
+| Amazon S3 | ~$0.05–1 | Static + audio files, grows with accumulated audio storage |
+| Amazon API Gateway | ~$0.01–2 | $3.5/million requests |
+| Amazon CloudFront | $0.00 | Free plan (1TB + 10 million requests/month) |
+| AWS WAF – CloudFront | $0.00 | Included in 5 free rules with CloudFront Free plan |
+| AWS WAF – API Gateway | ~$10–15 | ⚠️ Regional Web ACL (protects public /auth endpoint) — not covered by any free tier |
 | Amazon Cognito | $0.00 | Free tier 50,000 MAU |
 | Amazon SQS | ~$0.00 | Free tier 1M requests |
-| Amazon Polly | ~$0.04 | ~100,000 characters |
+| Amazon Polly | ~$0.04–5 | ~100,000 characters, free tier 5 million Standard characters/month (first year) |
 | Amazon SNS | ~$0.00 | Free tier |
+| Amazon CloudWatch | ~$1–5 | Logs + Alarms — essential service for system monitoring |
 | Amazon Route 53 | ~$0.50 | Hosted Zone $0.50/month |
 | AWS ACM | $0.00 | Completely free |
-| OpenAI API | ~$1–$5 | Depends on evaluation volume |
-| **Total AWS** | **~$0.60/month** | |
-| **Total with OpenAI** | **~$1.60–$5.60/month** | |
+| **Total AWS** | **~$12–30/month** | |
+| **OpenAI API** | **~$5–50+** | Varies with actual evaluation volume, cost outside AWS |
+| **Total with OpenAI** | **~$17–80/month** | |
 
 ### One-time Costs
 
 | Item | Cost |
 |------|------|
 | Domain `itcoach24h.xyz` (Namecheap) | ~$2–3/year |
-| **First Year Total** | **~$22–70/year** (domain $2-3/year + AWS $1.60-5.60/month × 12 months) |
 
 ### Cost Summary
 
 - **Startup cost:** ~$2–3 (domain)
-- **Monthly operational cost:** ~$1.60–$5.60
-- **First year total:** ~$22–70 (domain $2-3/year + AWS $1.60-5.60/month × 12 months)
-- **From 2nd year onwards:** ~$20–$70/year (domain renewal + operation)
+- **Monthly operational cost:** ~$17–80 (AWS $12–30 + OpenAI $5–50+, depending on actual traffic)
+- **First year total:** ~$200–1,000 (domain + AWS × 12 months + OpenAI × 12 months)
+- **From 2nd year onwards:** equivalent to annual operational cost, plus domain renewal (~$2–3/year)
+
+### Cost Control Notes
+
+💡 **High variability factors:**
+- **OpenAI API**: Primary cost driver, depends on actual evaluation volume. Must set **Usage Limits** on OpenAI dashboard
+- **AWS WAF (API Gateway)**: Fixed cost ~$10–15/month, necessary to protect public `/auth` endpoint from brute-force attacks
+
+**Recommendations:**
+- Set **AWS Budget Alert** to notify when costs exceed $50/month
+- Configure **OpenAI Usage Cap** to prevent budget overruns
+- Monitor **CloudWatch Metrics** to optimize request volume
 
 ## 8. Risk Assessment
 

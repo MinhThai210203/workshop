@@ -1,9 +1,9 @@
 ---
 title: "Deploy Code"
 date: 2024-01-01
-weight: 13
+weight: 14
 chapter: false
-pre: " <b> 5.13. </b> "
+pre: " <b> 5.14. </b> "
 ---
 
 #### Introduction

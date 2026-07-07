@@ -1,9 +1,9 @@
 ﻿---
 title: "Cleaning up Resources"
 date: 2024-01-01
-weight: 14
+weight: 15
 chapter: false
-pre: " <b> 5.14. </b> "
+pre: " <b> 5.15. </b> "
 ---
 
 #### Why cleanup?
@@ -24,7 +24,28 @@ After completing the workshop, you should clean up resources to:
 - After disabled → **Delete**
 
 
-### 2. Delete API Gateway
+### 2. Delete AWS WAF Web ACLs (2 Web ACLs)
+
+**⚠️ Important:** Must delete WAF **after** disabling CloudFront and before deleting API Gateway
+
+**2.1. Delete WAF CloudFront (us-east-1):**
+- Switch region to **us-east-1**
+- WAF & Shield → Web ACLs
+- Select `itcoach-cloudfront-waf`
+- **Delete**
+
+**2.2. Delete WAF API Gateway (ap-southeast-1):**
+- Switch region to **ap-southeast-1**
+- WAF & Shield → Web ACLs
+- Select `itcoach-api-waf`
+- **Delete**
+
+
+### 3. Delete API Gateway
+
+- API Gateway → APIs
+- Select `itcoach-api`
+### 3. Delete API Gateway
 
 - API Gateway → APIs
 - Select `itcoach-api`
@@ -32,28 +53,28 @@ After completing the workshop, you should clean up resources to:
 - Confirm deletion
 
 
-### 3. Delete Lambda Functions (8 functions)
+### 4. Delete Lambda Functions (8 functions)
 
 - Lambda → Functions
 - Select each function → **Actions** → **Delete**
 - Repeat for all 8 functions
 
 
-### 4. Delete SQS Queues (2 queues)
+### 5. Delete SQS Queues (2 queues)
 
 - SQS → Queues
 - Select `itcoach-processing-queue` → **Delete**
 - Select `itcoach-dlq` → **Delete**
 
 
-### 5. Delete Cognito User Pool
+### 6. Delete Cognito User Pool
 
 - Cognito → User pools
 - Select user pool → **Delete**
 - Enter pool name to confirm
 
 
-### 6. Delete DynamoDB Tables (8 tables)
+### 7. Delete DynamoDB Tables (8 tables)
 
 - DynamoDB → Tables
 - Select each table → **Delete**
@@ -61,7 +82,7 @@ After completing the workshop, you should clean up resources to:
 
 
 
-### 7. Delete S3 Buckets (2 buckets)
+### 8. Delete S3 Buckets (2 buckets)
 
 **Important:** Must **empty bucket first** before deleting
 
@@ -73,21 +94,21 @@ After completing the workshop, you should clean up resources to:
 
 
 
-### 8. Delete IAM Role
+### 9. Delete IAM Role
 
 - IAM → Roles
 - Find `itcoach-lambda-role`
 - **Delete** role
 
 
-### 9. Delete SNS Topic and Subscription
+### 10. Delete SNS Topic and Subscription
 
 - SNS → Topics
 - Select `itcoach-alerts` → **Delete**
 - Subscriptions will be automatically deleted
 
 
-### 10. Delete CloudWatch Alarms (if created)
+### 11. Delete CloudWatch Alarms (if created)
 
 - CloudWatch → Alarms
 - Select all related alarms → **Delete**
@@ -97,15 +118,16 @@ After completing the workshop, you should clean up resources to:
 | # | Resource | Status |
 |---|----------|--------|
 | 1 | CloudFront Distribution | ⬜ |
-| 2 | API Gateway | ⬜ |
-| 3 | Lambda Functions (8) | ⬜ |
-| 4 | SQS Queues (2) | ⬜ |
-| 5 | Cognito User Pool | ⬜ |
-| 6 | DynamoDB Tables (8) | ⬜ |
-| 7 | S3 Buckets (2) | ⬜ |
-| 8 | IAM Role | ⬜ |
-| 9 | SNS Topic | ⬜ |
-| 10 | CloudWatch Alarms | ⬜ |
+| 2 | AWS WAF Web ACLs (2) | ⬜ |
+| 3 | API Gateway | ⬜ |
+| 4 | Lambda Functions (8) | ⬜ |
+| 5 | SQS Queues (2) | ⬜ |
+| 6 | Cognito User Pool | ⬜ |
+| 7 | DynamoDB Tables (8) | ⬜ |
+| 8 | S3 Buckets (2) | ⬜ |
+| 9 | IAM Role | ⬜ |
+| 10 | SNS Topic | ⬜ |
+| 11 | CloudWatch Alarms | ⬜ |
 
 #### Verify Cleanup Complete
 
@@ -113,6 +135,7 @@ Check each service to ensure no remaining resources:
 
 ```
 ✅ CloudFront: 0 distributions
+✅ WAF: 0 Web ACLs
 ✅ API Gateway: 0 APIs
 ✅ Lambda: 0 functions (except your other functions)
 ✅ SQS: 0 related queues
