@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 6. </b> "
 ---
 
-During my internship at **Amazon Web Services Vietnam Co., Ltd.** in the position of **Workforce Bootcamp - First Cloud AI Journey** from **April 17, 2026** to **July 10, 2026**, I had the opportunity to learn, practice, and apply the knowledge acquired in school to a real-world working environment.  
+During my internship at **Amazon Web Services Vietnam Co., Ltd.** in the position of **Workforce Bootcamp - First Cloud AI Journey** from **April 17, 2026** to **July 30, 2026**, I had the opportunity to learn, practice, and apply the knowledge acquired in school to a real-world working environment.  
 I participated in **building workshops and deploying serverless applications on AWS platform**, through which I improved my skills in **team work management and task distribution, cloud infrastructure development**.  
 
 In terms of work ethic, I always strived to complete tasks well, complied with workplace regulations, and actively engaged with colleagues to improve work efficiency.
